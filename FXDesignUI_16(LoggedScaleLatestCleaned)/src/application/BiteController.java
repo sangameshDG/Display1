@@ -71,8 +71,6 @@ public class BiteController implements Initializable,ILayoutParam{
 	
 	@FXML AnchorPane BiteSetup;
 	
-	
-	
 	@FXML MaterialDesignButtonWidget biteOn;
 	@FXML MaterialDesignButtonWidget biteOff;	
 	@FXML ComboBox<String> comboAzDop;
