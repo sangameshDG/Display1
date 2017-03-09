@@ -38,7 +38,7 @@ public class Master extends Application {
 			AppConfig.getInstance().setFxmlController(mFXMLController);
 			Scene scene = new Scene(root);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
-	        primaryStage.setMaximized(false);
+	        primaryStage.setMaximized(true);
 	        primaryStage.setResizable(false);
 	        primaryStage.setScene(scene);
 	        primaryStage.show();   
