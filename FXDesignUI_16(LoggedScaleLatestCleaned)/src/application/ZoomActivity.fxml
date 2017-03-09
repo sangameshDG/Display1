@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import materialdesignbutton.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import views.*?>
+
+<AnchorPane fx:id="ZoomDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="471.0" style="-fx-border-color: #089fea; -fx-background-color: #deeecd; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ZoomController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox spacing="240.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MaterialDesignButtonWidget minWidth="100.0" onAction="#cancelClick" text="Exit">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="btn_delete" minWidth="87.0" onAction="#onDeleteZone" prefHeight="29.0" prefWidth="90.0" text="Delete ">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox prefHeight="264.0" prefWidth="486.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+                     <content>
+                        <AnchorPane prefHeight="262.0" prefWidth="474.0" style="-fx-background-color: white;">
+                           <children>
+                              <VBox prefHeight="397.0" prefWidth="644.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox prefHeight="26.0" prefWidth="452.0" spacing="20.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="82.0" text="Az Zones">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="66.0" text="Rmin">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="66.0" text="Rmax">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="142.0" layoutY="10.0" prefHeight="30.0" prefWidth="66.0" text="AngleMin">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="208.0" layoutY="10.0" prefHeight="30.0" prefWidth="66.0" text="AngleMax">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone1" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 1">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <TextField fx:id="z1_Rmin" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z1_Rmax" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z1_Azmin" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z1_Azmax" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="15.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone2" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 2">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <TextField fx:id="z2_Rmin" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z2_Rmax" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z2_Azmin" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z2_Azmax" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="63.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone3" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 3">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <TextField fx:id="z3_Rmin" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z3_Rmax" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z3_Azmin" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z3_Azmax" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="111.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone4" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 4">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <TextField fx:id="z4_Rmin" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z4_Rmax" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z4_Azmin" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z4_Azmax" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="159.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone5" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 5">
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <TextField fx:id="z5_Rmin" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z5_Rmax" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z5_Azmin" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z5_Azmax" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="20.0" prefHeight="36.0" prefWidth="465.0" spacing="20.0">
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="82.0" text="El Zones">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label prefHeight="30.0" prefWidth="66.0" text="Rmin">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="66.0" text="Rmax">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="142.0" layoutY="10.0" prefHeight="30.0" prefWidth="66.0" text="AngleMin">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="208.0" layoutY="10.0" prefHeight="30.0" prefWidth="66.0" text="AngleMax">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="44.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone11" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 1">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <TextField fx:id="z1_Rmin1" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z1_Rmax1" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z1_Azmin1" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z1_Azmax1" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="84.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone21" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 2">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <TextField fx:id="z2_Rmin1" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z2_Rmax1" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z2_Azmin1" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z2_Azmax1" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="126.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone31" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 3">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <TextField fx:id="z3_Rmin1" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z3_Rmax1" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z3_Azmin1" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z3_Azmax1" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="168.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone41" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 4">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <TextField fx:id="z4_Rmin1" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z4_Rmax1" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z4_Azmin1" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z4_Azmax1" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox layoutX="10.0" layoutY="210.0" prefHeight="48.0" prefWidth="644.0" spacing="10.0">
+                                       <children>
+                                          <CheckBox fx:id="ch_zone51" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="Zone 5">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets bottom="15.0" />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <TextField fx:id="z5_Rmin1" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z5_Rmax1" layoutX="94.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z5_Azmin1" layoutX="174.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                          <TextField fx:id="z5_Azmax1" layoutX="254.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="465.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Zone Activity">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Line endX="365.0" fill="BLACK" startX="-100.0" stroke="#9a9696" />
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

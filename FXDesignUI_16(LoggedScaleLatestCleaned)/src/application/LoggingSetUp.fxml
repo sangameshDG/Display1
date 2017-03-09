@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import materialdesignbutton.*?>
+
+<AnchorPane fx:id="LoggingSetup" prefHeight="580.0" prefWidth="500.0" style="-fx-border-color: #089fea; -fx-background-color: #deeecd; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoggingSetUpController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <MaterialDesignButtonWidget fx:id="startBtn" minWidth="150.0" onAction="#startLog" text="Start Logging">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="privilegedExportBtn" minWidth="150.0" onAction="#priviExportlog" text="Privileged Export Logs">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox maxHeight="1.7976931348623157E308" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                     <content>
+                        <AnchorPane minHeight="100.0" minWidth="100.0">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox fx:id="AzimuthRAL111">
+                                       <children>
+                                          <MaterialDesignButtonWidget fx:id="exportBtn" minWidth="150.0" onAction="#exportLog" text="Export Logs">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignButtonWidget>
+                                          <MaterialDesignButtonWidget fx:id="loadBtn" minWidth="150.0" onAction="#loadLog" text="Load Logs">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignButtonWidget>
+                                          <ProgressIndicator fx:id="reportProgress" prefHeight="30.0" prefWidth="30.0" visible="false">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </ProgressIndicator>
+                                       </children>
+                                    </HBox>
+                                    <TabPane tabClosingPolicy="UNAVAILABLE">
+                                      <tabs>
+                                        <Tab closable="false" text="Azimuth Track Reports">
+                                          <content>
+                                            <AnchorPane minHeight="0.0" minWidth="0.0">
+                                                   <children>
+                                                      <ListView fx:id="azStringLogList" prefHeight="400.0" prefWidth="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab closable="false" text="Elevation Track Reports">
+                                          <content>
+                                            <AnchorPane>
+                                                   <children>
+                                                      <ListView fx:id="elStringLogList" prefHeight="400.0" prefWidth="480.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                          </content>
+                                        </Tab>
+                                      </tabs>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </TabPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="30.0" prefWidth="180.0" text="Logging Setup">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <MaterialDesignButtonWidget minWidth="50.0" onAction="#cancelClick" text="X">
+                           <HBox.margin>
+                              <Insets left="310.0" />
+                           </HBox.margin>
+                        </MaterialDesignButtonWidget>
+                     </children>
+                  </HBox>
+                  <Line endX="490.0" fill="BLACK" stroke="#9a9696" />
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

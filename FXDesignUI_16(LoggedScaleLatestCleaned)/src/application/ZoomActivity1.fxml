@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import materialdesignbutton.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import views.*?>
+
+<AnchorPane fx:id="ZoomDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="151.0" prefWidth="170.0" style="-fx-border-color: #089fea; -fx-background-color: #deeecd; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ValuesController">
+   <children>
+      <BorderPane layoutX="4.0" layoutY="4.0" prefHeight="177.0" prefWidth="220.0" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+         <center>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="153.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="166.0" style="-fx-background-color: black;">
+                     <children>
+                        <Pane fx:id="chartZoom" layoutX="2.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="84.0" prefWidth="166.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="-1.0">
+                           <children>
+                              <ResizableCanvas fx:id="cZoomL0" />
+                              <ResizableCanvas fx:id="cZoomL1" />
+                              <ResizableCanvas fx:id="cZoomL2" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="166.0">
+                     <children>
+                        <MaterialDesignButtonWidget minHeight="-Infinity" minWidth="-Infinity" onAction="#cancelClick" prefHeight="26.0" prefWidth="60.0" text="Exit">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </MaterialDesignButtonWidget>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox minHeight="20.0" minWidth="166.0" prefHeight="28.0" prefWidth="166.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Co-ordinate points">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Line endX="65.0" fill="BLACK" startX="-100.0" stroke="#9a9696" />
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import textvalue.*?>
+<?import textpanel.*?>
+<?import materialdesignbutton.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import views.*?>
+<?import materialdesignbutton.MaterialDesignButtonWidget?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLController">
+   <children>
+      <BorderPane fx:id="MainView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <Label fx:id="actiontarget" prefHeight="0.0" prefWidth="0.0" textAlignment="RIGHT" textFill="#1879c7" visible="false" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+         </bottom>
+         <right>
+            <ScrollPane fx:id="UIControls" hbarPolicy="NEVER" prefHeight="1033.0" prefWidth="184.0" BorderPane.alignment="CENTER">
+              <content>
+                <AnchorPane fx:id="UIRightAnchor" minHeight="0.0" minWidth="-Infinity" prefHeight="1182.0" prefWidth="279.0">
+                     <children>
+                        <VBox fx:id="controlBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextPanelWidget fx:id="AntennaControl" prefHeight="120.0" prefWidth="280.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_antscan" prefHeight="30.0" prefWidth="120.0" text="ANT SCAN">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_rwyselect" onAction="#onRunwaySetup" prefHeight="30.0" prefWidth="120.0" text="RWY SELECT">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_linearpol" prefHeight="30.0" prefWidth="120.0" text="LINEAR POL">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_circularpol" prefHeight="30.0" prefWidth="120.0" text="CIRCULAR POL">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                              <TextPanelWidget fx:id="RadarControl" prefHeight="120.0" prefWidth="280.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_power" prefHeight="30.0" prefWidth="120.0" text="POWER">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_txstandby" prefHeight="30.0" prefWidth="120.0" text="TX STANDBY">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_txradiate" prefHeight="30.0" prefWidth="120.0" text="TX RADIATE">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_radarsetup" onAction="#onRadarSetup" prefHeight="30.0" prefWidth="120.0" text="RADAR SETUP">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                              <TextPanelWidget fx:id="SystemControl" prefHeight="120.0" prefWidth="280.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_masterslave" onAction="#handleMasterSlaveAction" prefHeight="30.0" prefWidth="120.0" text="MASTER SLAVE">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_systemtest" prefHeight="30.0" prefWidth="120.0" text="SYSTEM TEST">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_routeselect" prefHeight="30.0" prefWidth="120.0" text="ROUTE SELECT">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_systemsetup" onAction="#onSystemSetup" prefHeight="30.0" prefWidth="120.0" text="SYSTEM SETUP">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="statusBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TextPanelWidget fx:id="userProfileBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="121.0" prefWidth="280.0">
+                                 <children>
+                                    <VBox prefHeight="112.0" prefWidth="280.0">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="270.0">
+                                             <VBox.margin>
+                                                <Insets right="103.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_linear" alignment="CENTER" contentDisplay="CENTER" onAction="#changeToLinear" prefHeight="30.0" prefWidth="70.0" text="LINEAR">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_logged" onAction="#changeToLogged" prefHeight="30.0" prefWidth="70.0" text="LOG">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER" prefHeight="40.0" prefWidth="270.0">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_km" alignment="CENTER" contentDisplay="CENTER" onAction="#changeToKM" prefHeight="30.0" prefWidth="70.0" text="KM">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_nm" alignment="CENTER" contentDisplay="CENTER" onAction="#changeToNM" prefHeight="30.0" prefWidth="70.0" text="NM">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="103.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                              <TextPanelWidget fx:id="radarSetupBox" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="253.0" prefWidth="280.0">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <VBox fx:id="radarSetUpAnchor" prefHeight="279.0" prefWidth="291.0">
+                                       <children>
+                                          <HBox prefHeight="40.0" prefWidth="270.0">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="txOn" onAction="#txOn" prefHeight="30.0" prefWidth="70.0" text="TX ON">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="txOff" onAction="#txOff" prefHeight="30.0" prefWidth="70.0" text="TX OFF">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="40.0" prefWidth="159.0">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_Update_omp" onAction="#om_UpdateClick" prefHeight="30.0" prefWidth="70.0" text=" OM P">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_radarCmdSend" onAction="#radarUpdateClick" prefHeight="30.0" prefWidth="70.0" text="Send ">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="20.0" right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Line endX="180.0" startX="-100.0" />
+                                          <HBox layoutX="20.0" layoutY="100.0" prefHeight="40.0" prefWidth="159.0">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_MTI_ON" onAction="#mTIOn" prefHeight="30.0" prefWidth="70.0" text="MTI ON">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_MTI_OFF" onAction="#mTIOff" prefHeight="30.0" prefWidth="70.0" text="MTI OFF">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="20.0" layoutY="161.0" prefHeight="40.0" prefWidth="159.0">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_Update_mti" onAction="#mtiUpdateClick" prefHeight="30.0" prefWidth="70.0" text="Send ">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets left="40.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="50.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </TextPanelWidget>
+                              <TextPanelWidget fx:id="RadarControl" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="71.0" prefWidth="280.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_localRemote" onAction="#checkLocalRemote" prefHeight="30.0" prefWidth="70.0" text="LOCAL">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_Ibit" onAction="#sendIbit" prefHeight="30.0" prefWidth="70.0" text="IBIT">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                              <TextPanelWidget fx:id="DisplayControl" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="123.0" prefWidth="279.0">
+                                 <children>
+                                    <VBox fx:id="Display_Control" alignment="TOP_CENTER">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_track" onAction="#showTRACK" prefHeight="30.0" prefWidth="70.0" text="TRACK">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_plot" onAction="#showPLOT" prefHeight="30.0" prefWidth="70.0" text="PLOT">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_raw" onAction="#showRAW" prefHeight="30.0" prefWidth="70.0" text="RAW">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_checkmarks" onAction="#handleRangeMarks" prefHeight="30.0" prefWidth="70.0" text="R LINE">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox fx:id="trackInfo_Units" alignment="TOP_CENTER" layoutX="20.0" layoutY="130.0">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_trackLabel" onAction="#showTRACK_LABEL" prefHeight="30.0" prefWidth="70.0" text="TRACKS INFO">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_unitsdisplay" onAction="#onUnitsDisplay" prefHeight="30.0" prefWidth="70.0" text="UNITS">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                              <TextPanelWidget fx:id="DisplayScale" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="172.0" prefWidth="279.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_display5" onAction="#handle5ButtonAction" prefHeight="30.0" prefWidth="70.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_display10" onAction="#handle10ButtonAction" prefHeight="30.0" prefWidth="70.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="btn_display20" onAction="#handle20ButtonAction" prefHeight="30.0" prefWidth="70.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                                <MaterialDesignButtonWidget fx:id="btn_display40" onAction="#handle40ButtonAction" prefHeight="30.0" prefWidth="70.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </MaterialDesignButtonWidget>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <Slider fx:id="displayScaleSlider" blockIncrement="5.0" majorTickUnit="5.0" max="35.0" min="3.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="10.0">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" right="110.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Slider>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                              <TextPanelWidget fx:id="QNH_QFE_Param" layoutX="10.0" layoutY="700.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="150.0" prefWidth="279.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="144.0" prefWidth="285.0">
+                                       <children>
+                                          <HBox alignment="TOP_CENTER">
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                             <children>
+                                                <Label prefHeight="30.0" prefWidth="60.0" text="QNH">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="QNH" prefHeight="26.0" prefWidth="70.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <Label prefHeight="30.0" prefWidth="20.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER" layoutX="25.0" layoutY="50.0">
+                                             <children>
+                                                <Label prefHeight="30.0" prefWidth="60.0" text="QFE">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="QFE" prefHeight="26.0" prefWidth="70.0">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <Label prefHeight="30.0" prefWidth="20.0">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER" layoutX="20.0" layoutY="90.0">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="save_QFE_QNH" onAction="#saveQFE" prefHeight="29.0" prefWidth="70.0" text="Save " />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="70.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                              <TextPanelWidget fx:id="renameTrack" layoutX="10.0" layoutY="855.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="120.0" prefWidth="279.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="144.0" prefWidth="285.0">
+                                       <children>
+                                          <HBox prefHeight="40.0" prefWidth="260.0">
+                                             <children>
+                                                <TextField fx:id="existing_ID" prefHeight="25.0" prefWidth="70.0" promptText="Existing">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="required_ID" layoutX="106.0" layoutY="10.0" prefHeight="25.0" prefWidth="80.0" promptText="Required ">
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="TOP_CENTER" layoutX="20.0" layoutY="90.0">
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="save_Track_Name" onAction="#onClickRename" prefHeight="29.0" prefWidth="70.0" text="Save " />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="110.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </TextPanelWidget>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="statusBox1" prefHeight="299.0" prefWidth="301.0">
+                           <children>
+                              <TextPanelWidget fx:id="HealthStatus" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="305.0" prefWidth="280.0">
+                                 <children>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <TextField fx:id="txtField_Sp" alignment="CENTER" editable="false" maxWidth="70.0" minHeight="30.0" text="SDP">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtField_Pc" alignment="CENTER" editable="false" maxWidth="70.0" minHeight="30.0" text="Pedestal">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets right="180.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <TextField fx:id="txtField_exrx" alignment="CENTER" editable="false" maxWidth="70.0" minHeight="30.0" text="EX-RX">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtField_lan" alignment="CENTER" editable="false" maxWidth="70.0" minHeight="30.0" text="LAN">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets right="180.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <TextField fx:id="txtField_Ac1" alignment="CENTER" editable="false" maxWidth="70.0" minHeight="30.0" text="Az Ant">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtField_Ac2" alignment="CENTER" editable="false" maxWidth="70.0" minHeight="30.0" text="El Ant">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets right="180.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <TextField fx:id="txtField_Ch1" alignment="CENTER" editable="false" maxWidth="70.0" minHeight="30.0" text="Rack 1">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                                <TextField fx:id="txtField_Ch2" alignment="CENTER" editable="false" maxWidth="70.0" minHeight="30.0" text="Rack 2">
+                                                   <font>
+                                                      <Font name="System Bold" size="14.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets right="180.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <TextField fx:id="txtField_AzPwr" alignment="CENTER" editable="false" minHeight="30.0" prefWidth="150.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets right="180.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <TextField fx:id="txtField_ElPwr" alignment="CENTER" editable="false" minHeight="30.0" prefWidth="150.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </HBox.margin>
+                                                </TextField>
+                                             </children>
+                                             <padding>
+                                                <Insets right="180.0" />
+                                             </padding>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="10.0" top="40.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </TextPanelWidget>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </right>
+         <center>
+            <ScrollPane fx:id="UIGraph" fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+              <content>
+                <AnchorPane fx:id="UIGraphAnchor" minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <GridPane fx:id="GraphGridPane" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <GridPane prefHeight="115.0" prefWidth="1638.0" GridPane.rowIndex="2">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="10.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="90.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="50.0" percentHeight="100.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox prefHeight="53.0" prefWidth="110.0">
+                                             <children>
+                                                <TextField fx:id="textTime" maxWidth="100.0" minHeight="17.0" text="Date">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="10.0" />
+                                                   </font>
+                                                </TextField>
+                                                <TextField fx:id="textDate" maxWidth="100.0" minHeight="17.0" text="Time">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="10.0" />
+                                                   </font>
+                                                </TextField>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </Pane>
+                                    <ScrollPane fitToHeight="true" prefHeight="57.0" prefWidth="1564.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="89.0" prefWidth="1495.0">
+                                             <children>
+                                                <HBox fx:id="allButtonsBelow" layoutX="2.0" prefHeight="89.0" prefWidth="1520.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-27.0" AnchorPane.topAnchor="0.0">
+                                                   <children>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showUserSetting" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onUserSetup" style="-fx-background-image: url(&quot;assets/img/display_settings_on.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showMasterSetting" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleMasterSlaveAction" style="-fx-background-image: url(&quot;assets/img/master_settings.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showDisplaySetting" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onDisplaySetup" style="-fx-background-image: url(&quot;assets/img/display_settings_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showSystemSetting" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onSystemSetup" style="-fx-background-image: url(&quot;assets/img/system_settings_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showInstallation" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onShowInstallation" style="-fx-background-image: url(&quot;assets/img/install_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin></MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showBite" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onShowBite" style="-fx-background-image: url(&quot;assets/img/bite_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin></MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showAdvSettings" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onShowAdvSettings" style="-fx-background-image: url(&quot;assets/img/settings_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_refresh" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onRefreshAction" style="-fx-background-image: url(&quot;assets/img/refresh_on.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_record" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onRecordAction" style="-fx-background-image: url(&quot;assets/img/rec.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_zoom" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onZoomAction" style="-fx-background-image: url(&quot;assets/img/zoom_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showRunway" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onRunwaySetup" style="-fx-background-image: url(&quot;assets/img/runway_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showDiamond" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onDiamondSetup" style="-fx-background-image: url(&quot;assets/img/diamond_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="tdp_msl" alignment="CENTER" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onTDP_MSL" style="-fx-background-image: url(&quot;assets/img/TDP.jpg&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;" text="QFE">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="selectPoint" layoutX="1055.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onSelectArea" style="-fx-background-image: url(&quot;assets/img/Co-Points.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="Arial Bold" size="17.0" />
+                                                         </font>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_zoom1" layoutX="1135.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onZoomAction1" style="-fx-background-image: url(&quot;assets/img/CreateZones.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;" text=" " textAlignment="JUSTIFY">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_Zone" layoutX="1303.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onZoneAction" style="-fx-background-image: url(&quot;assets/img/ZoneUpdates.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_showStatus" layoutX="1303.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onShowStatusAction" style="-fx-background-image: url(&quot;assets/img/status_off.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="btn_startDisplay" layoutX="1375.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#onStartAction" style="-fx-background-image: url(&quot;assets/img/start.png&quot;); -fx-background-size: 30 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
+                                 </children>
+                              </GridPane>
+                              <AnchorPane>
+                                 <children>
+                                    <ScrollPane fx:id="chartTopScroll" fitToHeight="true" fitToWidth="true" pannable="true" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <AnchorPane style="-fx-background-color: black;">
+                                             <children>
+                                                <Pane fx:id="chartTop" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: black;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                                   <children>
+                                                   	<ResizableCanvas fx:id="cTopL0" />
+                                                      <ResizableCanvas fx:id="cTopL1" />
+                                                      <ResizableCanvas fx:id="cTopL11" />
+                                                      <ResizableCanvas fx:id="cTopL2" />
+                                                      <ResizableCanvas fx:id="cTopL31" />
+                                                      <ResizableCanvas fx:id="cTopL32" />
+                                                      <ResizableCanvas fx:id="cTopL4" />
+                                                      <ResizableCanvas fx:id="cTopL5" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                    <VBox fx:id="zoomTopControl" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0">
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <Label prefHeight="30.0" prefWidth="30.0" />
+                                                <MaterialDesignButtonWidget fx:id="topUp" onAction="#topUp" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/up.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                                <Label prefHeight="30.0" prefWidth="30.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox>
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="topLeft" onAction="#topLeft" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/left.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                                <MaterialDesignButtonWidget fx:id="topCenter" onAction="#topCenter" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/center.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                                <MaterialDesignButtonWidget fx:id="topRight" onAction="#topRight" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/right.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                             </children>
+                                          </HBox>
+                                          <HBox>
+                                             <children>
+                                                <Label prefHeight="30.0" prefWidth="30.0" />
+                                                <MaterialDesignButtonWidget fx:id="topDown" onAction="#topDown" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/down.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                                <Label prefHeight="30.0" prefWidth="30.0" />
+                                             </children>
+                                          </HBox>
+                                          <Slider fx:id="zoomSliderTop" blockIncrement="1.0" majorTickUnit="1.0" max="2.0" min="1.0" minorTickCount="1" prefHeight="30.0" prefWidth="90.0" showTickLabels="true" showTickMarks="true" style="-fx-background-color: #cccccc;" value="1.0">
+                                             <VBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                             </VBox.margin>
+                                          </Slider>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane GridPane.rowIndex="1">
+                                 <children>
+                                    <ScrollPane fx:id="chartBottomScroll" fitToHeight="true" fitToWidth="true" pannable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <content>
+                                          <AnchorPane style="-fx-background-color: black;">
+                                             <children>
+                                                <Pane fx:id="chartBottom" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: black;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                                   <children>
+                                                   	<ResizableCanvas fx:id="cBtmL0" />
+                                                      <ResizableCanvas fx:id="cBtmL1" />
+                                                      <ResizableCanvas fx:id="cBtmL11" />
+                                                      <ResizableCanvas fx:id="cBtmL2" />
+                                                      <ResizableCanvas fx:id="cBtmL31" />
+                                                      <ResizableCanvas fx:id="cBtmL32" />
+                                                      <ResizableCanvas fx:id="cBtmL4" />
+                                                      <ResizableCanvas fx:id="cBtmL5" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+                                    <VBox fx:id="zoomBtmControl" visible="false" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0">
+                                       <children>
+                                          <HBox>
+                                             <children>
+                                                <Label prefHeight="30.0" prefWidth="30.0" />
+                                                <MaterialDesignButtonWidget fx:id="BtmUp" onAction="#BtmUp" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/up.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                                <Label prefHeight="30.0" prefWidth="30.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox>
+                                             <children>
+                                                <MaterialDesignButtonWidget fx:id="BtmLeft" onAction="#BtmLeft" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/left.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                                <MaterialDesignButtonWidget fx:id="BtmCenter" onAction="#BtmCenter" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/center.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                                <MaterialDesignButtonWidget fx:id="BtmRight" onAction="#BtmRight" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/right.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                             </children>
+                                          </HBox>
+                                          <HBox>
+                                             <children>
+                                                <Label prefHeight="30.0" prefWidth="30.0" />
+                                                <MaterialDesignButtonWidget fx:id="BtmDown" onAction="#BtmDown" prefHeight="30.0" prefWidth="30.0" style="-fx-background-image: url(&quot;assets/img/down.png&quot;); -fx-background-repeat: no-repeat; fx-background-position: center; -fx-background-size: 30 30;" />
+                                                <Label prefHeight="30.0" prefWidth="30.0" />
+                                             </children>
+                                          </HBox>
+                                          <Slider fx:id="zoomSliderBtm" blockIncrement="1.0" majorTickUnit="1.0" max="2.0" min="1.0" minorTickCount="1" prefHeight="30.0" prefWidth="90.0" showTickLabels="true" showTickMarks="true" style="-fx-background-color: #cccccc;" value="1.0">
+                                             <VBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                             </VBox.margin>
+                                          </Slider>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" percentWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="483.9500305175781" minHeight="303.2" percentHeight="47.5" prefHeight="483.9500305175781" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="512.95" minHeight="348.2" percentHeight="47.5" prefHeight="490.95" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="98.10000000000002" minHeight="54.10000000000002" percentHeight="5.0" prefHeight="88.10999999999989" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </center>
+         <top>
+            <HBox alignment="TOP_RIGHT" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <MenuBar fx:id="fxMenuBar" prefHeight="30.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem mnemonicParsing="false" onAction="#menuCloseStage" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <MaterialDesignButtonWidget onAction="#menuCloseStage" prefWidth="50.0" text="X">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></MaterialDesignButtonWidget>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

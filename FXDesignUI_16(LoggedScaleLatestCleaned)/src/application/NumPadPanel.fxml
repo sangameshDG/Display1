@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import materialdesignbutton.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="NumPad" prefHeight="350.0" prefWidth="300.0" style="-fx-background-color: #deeecd; -fx-border-color: #089fea; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NumPadPanel">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox>
+               <children>
+                  <Label fx:id="NumTitle" minHeight="30.0" prefWidth="300.0" style="-fx-background-color: #2398d3;" text="Title" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <MaterialDesignButtonWidget minHeight="30.0" minWidth="50.0" onAction="#closeClick" text="X">
+                     <HBox.margin>
+                        <Insets bottom="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+            </HBox>
+            <HBox>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <Label fx:id="lblName" prefWidth="100.0" text="Passcode">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="NumValue" editable="false">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <CheckBox fx:id="showPass" mnemonicParsing="false">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </CheckBox>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <MaterialDesignButtonWidget fx:id="Num1" onAction="#onNum1" prefHeight="50.0" prefWidth="90.0" text="1">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="Num2" onAction="#onNum2" prefHeight="50.0" prefWidth="90.0" text="2">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="Num3" onAction="#onNum3" prefHeight="50.0" prefWidth="90.0" text="3">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <MaterialDesignButtonWidget fx:id="Num4" onAction="#onNum4" prefHeight="50.0" prefWidth="90.0" text="4">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="Num5" onAction="#onNum5" prefHeight="50.0" prefWidth="90.0" text="5">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="Num6" onAction="#onNum6" prefHeight="50.0" prefWidth="90.0" text="6">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <MaterialDesignButtonWidget fx:id="Num7" onAction="#onNum7" prefHeight="50.0" prefWidth="90.0" text="7">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="Num8" onAction="#onNum8" prefHeight="50.0" prefWidth="90.0" text="8">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="Num9" onAction="#onNum9" prefHeight="50.0" prefWidth="90.0" text="9">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <MaterialDesignButtonWidget fx:id="NumEsc" onAction="#onEsc" prefHeight="50.0" prefWidth="90.0" text="Clear">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="Num0" onAction="#onNum0" prefHeight="50.0" prefWidth="90.0" text="0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="NumReturn" onAction="#onReturn" prefHeight="50.0" prefWidth="90.0" text="OK">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <MaterialDesignButtonWidget fx:id="NewPass" onAction="#onNewPassword" prefHeight="50.0" prefWidth="290.0" text="Enter New Passcode">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

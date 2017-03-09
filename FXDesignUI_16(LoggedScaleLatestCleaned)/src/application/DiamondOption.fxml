@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import materialdesignbutton.*?>
+
+<AnchorPane fx:id="diamondOptionDialog" prefHeight="650.0" prefWidth="500.0" style="-fx-border-color: #089fea; -fx-background-color: #deeecd; fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DiamondOptionController">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="200.0" text="Configuration Parameters">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <MaterialDesignButtonWidget fx:id="closeX" onAction="#closeClick" prefWidth="50.0" text="X">
+                           <HBox.margin>
+                              <Insets left="250.0" />
+                           </HBox.margin></MaterialDesignButtonWidget>
+                     </children>
+                  </HBox>
+                  <Line endX="450.0" fill="BLACK" stroke="#9a9696" />
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <HBox fx:id="AzimuthRAL111" BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <Label text="Do you want to save your configuration changes?" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <MaterialDesignButtonWidget fx:id="btn_save" onAction="#saveClick" prefWidth="120.0" text="Save">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="btn_load" onAction="#loadClick" prefWidth="120.0" text="Load">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+                  <MaterialDesignButtonWidget fx:id="btn_export" onAction="#exportClick" prefWidth="120.0" text="Export">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </MaterialDesignButtonWidget>
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                  <Tab text="General">
+                    <content>
+                      <AnchorPane>
+                           <children>
+                              <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <content>
+                                    <AnchorPane>
+                                       <children>
+                                          <VBox fx:id="disp_Paramtr" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Label minWidth="200.0" text="RC 1 IP">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="rc1Ip">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label minWidth="200.0" text="RC 2 IP">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="rc2Ip">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label minWidth="200.0" text="Port No for Radar Control">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="portSend">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label minWidth="200.0" text="MSL offset (meters)">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtMslOff">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <Label fx:id="aZLabel" text="Azimuth Plane">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label>
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox fx:id="aZRsafety">
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Right safety limit">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtAzRsl">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="degree">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="azLsafety">
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Left safety limit">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtAzLsl">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="degree">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Label fx:id="errorMargin" text="Error Margin">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox fx:id="aZRAL">
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Right approach limit">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtAzRal">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="degree">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="aZLAL">
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Left approach limit">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtAzLal">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="degree">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Label text="Elevation Plane">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox fx:id="ElevationGlideAngle">
+                                                   <children>
+                                                      <Label minWidth="200.0" text="Glide Path Angle">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <ComboBox fx:id="comboGlideAngle" minWidth="150.0" promptText="Select" visibleRowCount="5">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </ComboBox>
+                                                      <Label minWidth="50.0" text="degrees">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <Label fx:id="elSafetyLabel">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox fx:id="elUsafety">
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Upper safety limit">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtElUsl" editable="false">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="degree">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="elLsafety">
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Lower safety limit">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtElLsl" editable="false">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="degree">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <Label fx:id="errorMarginEL" text="Error Margin">
+                                                   <font>
+                                                      <Font name="Arial Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox fx:id="elUerror">
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Upper approach limit">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtElRal" editable="false">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="degree">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="elLerror">
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Lower approach limit">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtElLal" editable="false">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="degree">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="50.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label minWidth="150.0" text="Glide Angle Distance For Fixed Height">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtGlideDistFixedHeight">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="KM/NM">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label minWidth="201.0" text="Glide Path Maximum Distance">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtGlideAngleMaxDist">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <Label minWidth="50.0" text="KM/NM">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="includeDispParam">
+                                                   <children>
+                                                      <CheckBox fx:id="displayParamCheck" mnemonicParsing="false" selected="true" text="Include Display Parameters">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </CheckBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_RIGHT">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <MaterialDesignButtonWidget minWidth="100.0" onAction="#clearGenPa" text="Clear">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="20.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                <Tab text="Runway">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <content>
+                                  <AnchorPane>
+                                       <children>
+                                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Label minWidth="200.0" text="Select Runway">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <ComboBox fx:id="comboRunway" prefWidth="150.0" promptText="Select" visibleRowCount="5">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </ComboBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="elevationUnits211">
+                                                   <children>
+                                                      <Label minWidth="200.0" text="Azimuth Axis">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtAzAxis">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="elevationUnits21">
+                                                   <children>
+                                                      <Label minWidth="200.0" text="Minimum Range (meters)">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtMinRng">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="rangeUnits1">
+                                                   <children>
+                                                      <Label minWidth="200.0" text="Elevation Tilt">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtElTilt">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox fx:id="elevationUnits">
+                                                   <children>
+                                                      <Label minWidth="200.0" text="Azimuth Tilt">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtAzTilt">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="elevationUnits1">
+                                                   <children>
+                                                      <Label minWidth="200.0" text="X Offset (meters)">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtXoffset">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <HBox fx:id="elevationUnits2">
+                                                   <children>
+                                                      <Label minWidth="200.0" text="Y Offset (meters)">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="txtYoffset">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <Label text="Corner Reflectors [Range (KM) &amp; Angle (degrees)]">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                </Label>
+                                                <HBox>
+                                                   <children>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox fx:id="mcGroupIP16">
+                                                               <children>
+                                                                  <CheckBox fx:id="azSpot1" minWidth="60.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="CR 1">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <TextField fx:id="azSpotRng1" prefHeight="25.0" prefWidth="76.0" promptText="minRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng1" prefHeight="25.0" prefWidth="76.0" promptText="maxRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotRng1_1" layoutX="174.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="minAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng1_1" layoutX="260.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="maxAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox fx:id="mcGroupIP161">
+                                                               <children>
+                                                                  <CheckBox fx:id="azSpot2" minWidth="60.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="CR2">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <TextField fx:id="azSpotRng2" prefHeight="25.0" prefWidth="76.0" promptText="minRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng2" prefHeight="25.0" prefWidth="76.0" promptText="maxRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotRng2_1" layoutX="171.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="minAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng2_1" layoutX="257.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="maxAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="mcGroupIP151">
+                                                               <children>
+                                                                  <CheckBox fx:id="azSpot3" minWidth="60.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="CR 3">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <TextField fx:id="azSpotRng3" prefHeight="25.0" prefWidth="76.0" promptText="minRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng3" prefHeight="25.0" prefWidth="76.0" promptText="maxRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotRng3_1" layoutX="171.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="minAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng3_1" layoutX="257.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="maxAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="mcGroupIP141">
+                                                               <children>
+                                                                  <CheckBox fx:id="azSpot4" minWidth="60.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="CR 4">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <TextField fx:id="azSpotRng4" prefHeight="25.0" prefWidth="76.0" promptText="minRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng4" prefHeight="25.0" prefWidth="76.0" promptText="maxRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotRng4_1" layoutX="171.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="minAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng4_1" layoutX="257.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="maxAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="mcGroupIP131">
+                                                               <children>
+                                                                  <CheckBox fx:id="azSpot5" minWidth="60.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="CR 5">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <TextField fx:id="azSpotRng5" prefHeight="25.0" prefWidth="76.0" promptText="minRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng5" prefHeight="25.0" prefWidth="76.0" promptText="maxRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotRng5_1" layoutX="171.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="minAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng5_1" layoutX="257.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="maxAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox fx:id="mcGroupIP121">
+                                                               <children>
+                                                                  <CheckBox fx:id="azSpot6" minWidth="60.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="60.0" text="CR 6">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <TextField fx:id="azSpotRng6" prefHeight="25.0" prefWidth="76.0" promptText="minRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng6" prefHeight="25.0" prefWidth="76.0" promptText="maxRange">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotRng6_1" layoutX="171.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="minAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <TextField fx:id="azSpotAng6_1" layoutX="257.0" layoutY="15.0" prefHeight="25.0" prefWidth="76.0" promptText="maxAngle">
+                                                                     <HBox.margin>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                         <HBox.margin>
+                                                            <Insets left="20.0" />
+                                                         </HBox.margin>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="TOP_RIGHT">
+                                                   <children>
+                                                      <MaterialDesignButtonWidget minWidth="100.0" onAction="#clearConfigPa" text="Clear">
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

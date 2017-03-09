@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import materialdesignbutton.*?>
+
+<AnchorPane fx:id="InstallationSetup" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="550.0" style="-fx-border-color: #089fea; -fx-background-color: #deeecd; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.InstallationController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox BorderPane.alignment="TOP_LEFT">
+               <children>
+                  <ScrollPane VBox.vgrow="ALWAYS">
+                     <content>
+                        <AnchorPane>
+                           <children>
+                              <VBox fx:id="installationBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label text="Antenna">
+                                       <font>
+                                          <Font name="Arial Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox fx:id="rangeUnits">
+                                       <children>
+                                          <CheckBox fx:id="azMotor" minWidth="150.0" mnemonicParsing="false" text="Azimuth Motor" />
+                                          <CheckBox fx:id="horMotor" minWidth="150.0" mnemonicParsing="false" text="Horizontal Motor" />
+                                          <CheckBox fx:id="verMotor" minWidth="150.0" mnemonicParsing="false" text="Vertical Motor" />
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox fx:id="elevationUnits">
+                                       <children>
+                                          <Label minWidth="200.0" text="Azimuth Tilt">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtAzTilt">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="rangeUnits1">
+                                       <children>
+                                          <Label minWidth="200.0" text="Elevation Tilt">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtElTilt">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="rangeUnits11">
+                                       <children>
+                                          <Label minWidth="200.0" text="Azimuth Axis">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtAzAxis">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="updateUnit" alignment="TOP_RIGHT">
+                                       <children>
+                                          <Label fx:id="lbl_PcWrite" minHeight="30.0" minWidth="150.0">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <MaterialDesignButtonWidget fx:id="writePcSetting" minWidth="150.0" onAction="#writePcSetting" text="Write PC Setting">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin></MaterialDesignButtonWidget>
+                                       </children>
+                                    </HBox>
+                                    <Separator minHeight="10.0" />
+                                    <HBox fx:id="rangeUnits111">
+                                       <children>
+                                          <Label minWidth="200.0" text="Azimuth Actual Position">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtAzActPos">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox fx:id="rangeUnits1111">
+                                       <children>
+                                          <Label minWidth="200.0" text="Horizontal Actual Position">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtHorActPos">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="rangeUnits11111">
+                                       <children>
+                                          <Label minWidth="200.0" text="Vertical Actual Position">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtVerActPos">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <Label fx:id="lbl_PcRead" minHeight="30.0" minWidth="150.0">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <MaterialDesignButtonWidget fx:id="readPcSetting" minWidth="150.0" onAction="#readPcSetting" text="Read PC Setting">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignButtonWidget>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <Separator minHeight="10.0" />
+                                    <Label text="Receiver">
+                                       <font>
+                                          <Font name="Arial Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox fx:id="rangeUnits111111">
+                                       <children>
+                                          <Label minWidth="200.0" text="MSTC Law Azimuth">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtMstcAz">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="rangeUnits1111111">
+                                       <children>
+                                          <Label minWidth="200.0" text="MSTC Law Elevation">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtMstcEl">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox fx:id="rangeUnits1111112">
+                                       <children>
+                                          <Label minWidth="200.0" text="AGC Law">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtAgc">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label minWidth="200.0" text="Frequency">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="comboFreq" minWidth="150.0" promptText="Select" visibleRowCount="5">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Label minWidth="50.0" text="GHz">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Label minWidth="50.0">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT">
+                                       <children>
+                                          <Label fx:id="lbl_MainMsg" minHeight="30.0" minWidth="150.0">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <MaterialDesignButtonWidget minWidth="150.0" onAction="#updateClick" text="Update">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignButtonWidget>
+                                       </children>
+                                    </HBox>
+                                    <Separator layoutX="10.0" layoutY="347.0" minHeight="3.0" prefHeight="3.0" prefWidth="544.0" />
+                                    <HBox alignment="TOP_RIGHT" layoutX="10.0" layoutY="497.0" minHeight="30.0" minWidth="520.0">
+                                       <children>
+                                          <Label fx:id="lbl_MainMsg1" minHeight="30.0" minWidth="200.0" text="Tail History ">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="20.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="tailCount">
+                                             <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                          <MaterialDesignButtonWidget minWidth="150.0" onAction="#updateClick2" text="Update">
+                                             <HBox.margin>
+                                                <Insets left="5.0" right="5.0" top="5.0" />
+                                             </HBox.margin>
+                                          </MaterialDesignButtonWidget>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="225.0" text="Installation Setup">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <MaterialDesignButtonWidget minWidth="50.0" onAction="#cancelClick" text="X">
+                           <HBox.margin>
+                              <Insets left="280.0" />
+                           </HBox.margin>
+                        </MaterialDesignButtonWidget>
+                     </children>
+                  </HBox>
+                  <Line endX="520.0" fill="BLACK" stroke="#9a9696" />
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

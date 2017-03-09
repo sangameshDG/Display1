@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import status.three.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import materialdesignbutton.*?>
+
+<AnchorPane fx:id="AntennaSetup" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1150.0" style="-fx-border-color: #089fea; -fx-background-color: #deeecd; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AntennaSetUpController">
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane VBox.vgrow="ALWAYS">
+                     <content>
+                        <AnchorPane minHeight="100.0" minWidth="100.0">
+                           <children>
+                              <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <VBox prefWidth="570.0">
+                                             <children>
+                                                <HBox>
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="50.0" text="RF IF">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="rf_if_ch1" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="30.0" prefWidth="50.0" text="CH1">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="rf_if_ch2" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="30.0" prefWidth="50.0" text="CH2">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="rf_if_duty" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="30.0" prefWidth="50.0" text="Duty">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="50.0" text="Sensors">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="humidity" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="30.0" prefWidth="150.0" promptText="humidity (%)">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                      <TextField fx:id="temp" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="30.0" prefWidth="150.0" promptText="temp (deg C)">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="50.0" text="VSWR">
+                                                         <font>
+                                                            <Font name="Arial Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="vswr" alignment="CENTER" editable="false" focusTraversable="false" prefHeight="30.0" prefWidth="150.0" promptText="vswr">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </TextField>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox>
+                                             <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" text="Planks">
+                                                   <font>
+                                                      <Font name="System Bold" size="12.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <HBox>
+                                                   <children>
+                                                      <MaterialDesignButtonWidget fx:id="plank1" alignment="CENTER" contentDisplay="CENTER" onAction="#plank1Click" prefHeight="40.0" prefWidth="70.0" text="1">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="plank2" alignment="CENTER" contentDisplay="CENTER" onAction="#plank2Click" prefHeight="40.0" prefWidth="70.0" text="2">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="plank3" alignment="CENTER" contentDisplay="CENTER" onAction="#plank3Click" prefHeight="40.0" prefWidth="70.0" text="3">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="plank4" alignment="CENTER" contentDisplay="CENTER" onAction="#plank4Click" prefHeight="40.0" prefWidth="70.0" text="4">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                   </children>
+                                                </HBox>
+                                                <HBox>
+                                                   <children>
+                                                      <MaterialDesignButtonWidget fx:id="plank5" alignment="CENTER" contentDisplay="CENTER" onAction="#plank5Click" prefHeight="40.0" prefWidth="70.0" text="5">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="plank6" alignment="CENTER" contentDisplay="CENTER" onAction="#plank6Click" prefHeight="40.0" prefWidth="70.0" text="6">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="plank7" alignment="CENTER" contentDisplay="CENTER" onAction="#plank7Click" prefHeight="40.0" prefWidth="70.0" text="7">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                      <MaterialDesignButtonWidget fx:id="plank8" alignment="CENTER" contentDisplay="CENTER" onAction="#plank8Click" prefHeight="40.0" prefWidth="70.0" text="8">
+                                                         <HBox.margin>
+                                                            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </MaterialDesignButtonWidget>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Label prefHeight="30.0" text="Dual Trans Receiver Modules">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <HBox>
+                                       <children>
+                                          <VBox>
+                                             <children>
+                                                <Status3Widget fx:id="dtrm1">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm2">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm3">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm4">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm5">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm6">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm7">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm8">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                             </children>
+                                          </VBox>
+                                          <VBox>
+                                             <children>
+                                                <Status3Widget fx:id="dtrm9">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm10">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm11">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm12">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm13">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm14">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm15">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                                <Status3Widget fx:id="dtrm16">
+                                                   <VBox.margin>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </Status3Widget>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </center>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox>
+                     <children>
+                        <Label fx:id="title" prefHeight="30.0" text="Subsystem status">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Label>
+                        <MaterialDesignButtonWidget minWidth="50.0" onAction="#cancelClick" text="X">
+                           <HBox.margin>
+                              <Insets left="820.0" />
+                           </HBox.margin>
+                        </MaterialDesignButtonWidget>
+                     </children>
+                  </HBox>
+                  <Line endX="890.0" fill="BLACK" stroke="#9a9696" />
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
